@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* font-family: ; */
+}
+
+body{
+    background: url("assets/slide-02.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.main{
+    height: 95vh;
+
+}
+
+/* NAV SECTION */
+
+.nav{
+    margin: 20px 60px;
+    display: flex;
+    height: fit-content;
+}
+
+.nav-left{
+    color: orangered;
+    font-size: 25px;
+    width: 20%;
+}
+
+.nav-middle{
+    width: 50%;
+}
+
+.nav-links{
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+    margin-top: 13px;
+}
+
+.nav-link{
+    margin: 0px auto;
+    font-size: 15px;
+    font-weight: 900;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 15px;
+    transition: all 0.5s ease;
+    text-decoration: none;
+}
+
+.nav-link:hover{
+    background-color: rgba(255, 255, 255, 0.205);
+    transition: all 0.5s ease;
+}
+
+.nav-right{
+    width: 30%;
+}
+.nav-form{
+    width: 85%;
+    height: 25px;
+    float: right;
+    margin: 0px auto;
+    margin-top: 7.5px;
+    padding: 0;
+    border: 2px solid rgb(255, 121, 73);
+}
+
+.search-input{
+    width: 75%;
+    height: 100%;
+    border: none;
+    font-size: 12px;
+    background-color: transparent;
+    color: white;
+}
+
+.search-button{
+    width: 25%;
+    height: 100%;
+    border: none;
+    float: right;
+    background-color: rgb(255, 121, 73);
+    font-size: 12px;
+    font-weight: 900;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+/* SECTION */
+
+.section{
+    width: 90%;
+    height: fit-content;
+    margin: 0px auto;
+    margin-top: 100px;
+    display: flex;
+}
+
+.left-section{
+    width: 73%;
+}
+
+.left-section h1{
+    font-size: 50px;
+    font-family: comic sans ms;
+    color: white;
+}
+
+#java{
+    color: orangered;
+}
+
+.left-section p{
+    font-size: 18px;
+    line-height: 25px;
+    margin: 20px auto;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+.join-us{
+    background-color: rgb(233, 132, 0);
+    padding: 8px 23px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+    font-weight: 900;
+    transition: all 0.5s ease;
+}
+
+.join-us:hover{
+    background-color: rgb(209, 101, 0);
+    transition: all 0.5s ease;
+}
+
+.right-section{
+    width: 27%;
+    text-align: center;
+    padding: 20px 0px;
+    background-color: rgba(0, 0, 0, 0.623);
+}
+
+.sign-in-header{
+    font-size: 25px;
+    color: white;
+}
+
+.sign-in-form{
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.sign-in-input{
+    font-size: 12px;
+    border: none;
+    border-bottom: 1px solid rgb(255, 121, 73);
+    display: block;
+    width: 90%;
+    height: 25px;
+    margin: 25px auto;
+    background-color: transparent;
+    color: white;
+}
+
+.sign-in-button{
+    width: 80%;
+    padding: 8px 0px;
+    font-size: 13px;
+    background-color: rgb(233, 132, 0);
+    border-radius: 4px;
+    color: white;
+    font-weight: 900;
+    border: none;
+    transition: all 0.5s ease;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.sign-in-button:hover{
+    background-color: rgb(209, 101, 0);
+    transition: all 0.5s ease;
+}
+
+h5{
+    font-size: 13px;
+    color: white;
+}
+
+h5 a{
+    text-decoration: none;
+    color: orangered;
+}
+
+.icon-links{
+    margin: 15px auto;
+    width: 50%;
+}
+
+a.icon-link{
+    margin: 0px auto;
+    padding: 0px 2px;
+}
+
+p{
+    color: white;
+}
+
+.icon-link img{
+    width: 20px;
+}

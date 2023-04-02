@@ -1,0 +1,29 @@
+{% extends 'dashboard/base.html' %}
+
+
+{% block content %}
+
+<div class="h3 col-10 mt-4">Add Level</div>
+
+<div class="mb-3 mt-5">
+    <form action="add-level/add" method="post" class="row">
+        {% csrf_token %}
+        <div class="col-4">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="floatingInput" name="newLevel" maxlength="4">
+                <label for="floatingInput">Level Title</label>
+                <div class="invalid-feedback">
+                    Valid Level title is required.
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <a name="" id="" class="btn btn-danger mt-2 ms-1 ps-4 pe-4" href="add-level/cancel" role="button">Cancel</a>
+            <input name="" id="" class="btn btn-success mt-2 ms-1 ps-4 pe-4" type="submit" value="Add">
+        </div>
+    </form>
+    
+</div>
+
+{% endblock content %}

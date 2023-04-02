@@ -1,0 +1,52 @@
+{% extends 'dashboard/base.html' %}
+
+
+{% block content %}
+<div class="col-md-7 col-lg-10 mt-5 ms-4">
+    <h4 class="mb-3">View Course {{course.courseCode}} - {{course.courseTitle}}</h4>
+    <form class="needs-validation" novalidate="" action="create-course/create" method="post">
+        {% csrf_token %}
+      <div class="row g-3">
+        <div class="col-sm-2">
+          <label for="courseCode" class="form-label">Course Code</label>
+          <input type="text" class="form-control" id="courseCode" maxlength="7" value="{{course.courseCode}}" disabled name="courseCode">
+        </div>
+
+        <div class="col-sm-8">
+          <label for="courseTitle" class="form-label">Course Title</label>
+          <input type="text" class="form-control" id="courseTitle" value="{{course.courseTitle}}" disabled name="courseTitle">
+        </div>
+
+        <div class="col-sm-2">
+          <label for="creditLoad" class="form-label">Credit Load</label>
+          <input type="text" class="form-control" id="creditLoad" placeholder="2" value="{{course.creditLoad}}" disabled name="creditLoad">
+        </div>
+
+
+          <div class="col-md-2">
+            <label for="level" class="form-label">Level</label>
+            <input type="text" class="form-control" id="level" value="{{course.level}}" disabled name="level">
+          </div>
+
+          <div class="col-md-4">
+            <label for="faculty" class="form-label">Faculty</label>
+            <input type="text" class="form-control" id="faculty" value="{{course.faculty}}" disabled name="faculty">
+          </div>
+
+          <div class="col-md-6">
+            <label for="department" class="form-label">Department</label>
+            <input type="text" class="form-control" id="department" value="{{course.department}}" disabled name="department">
+          </div>
+
+      <hr class="my-4">
+
+      <div class="col-12 d-flex justify-content-between">
+        {% comment %} <button class="btn btn-primary btn-lg col-8" type="submit">Create Course</button> {% endcomment %}
+        <a name="cancel" id="" class="btn btn-danger btn-lg col-6 w-25" href="../create-course/cancel" role="button">Back</a>
+      </div>
+    </form>
+
+  </div>
+
+
+{% endblock %}

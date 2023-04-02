@@ -1,0 +1,95 @@
+{% extends 'dashboard/base.html' %}
+
+
+{% block content %}
+
+<div class="h2 mt-4 ">Profile Details</div>
+
+<div class="col-md-7 col-lg-11 mt-5 ms-4">
+    <form class="needs-validation" novalidate="" action="create-lecturer/create" method="post">
+        {% csrf_token %}
+      <div class="row g-3">
+        <div class="col-sm-6">
+          <label for="firstName" class="form-label">First name</label>
+          <input type="text" class="form-control" id="firstName" value="{{lecturer.firstName}}" disabled name="firstName">
+        </div>
+
+        <div class="col-sm-6">
+          <label for="lastName" class="form-label">Last name</label>
+          <input type="text" class="form-control" id="lastName" value="{{lecturer.lastName}}" disabled name="lastName">
+        </div>
+
+        <div class="col-md-4">
+            <label for="title" class="form-label">Title</label>
+          <input type="text" class="form-control" id="title" value="{{lecturer.title}}" disabled name="title">
+          </div>
+
+        <div class="col-sm-4">
+            <label for="idNumber" class="form-label">Id Number</label>
+          <input type="text" class="form-control" id="idNumber" value="{{lecturer.idNumber}}" disabled name="idNumber">
+          </div>
+
+          <div class="col-sm-4">
+            <label for="phone" class="form-label">Telephone</label>
+          <input type="tel" class="form-control" id="phone" value="{{lecturer.phone}}" disabled name="phone">
+          </div>
+
+          <div class="col-md-6">
+            <label for="dateOfBirth" class="form-label">Date of Birth</label>
+            <input type="text" class="form-control" id="dateOfBirth" placeholder="{{lecturer.dateOfBirth}}" value="" disabled name="dateOfBirth">
+          </div>
+
+
+        <div class="col-6">
+          <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
+          <input type="email" class="form-control" id="email" value="{{lecturer.email}}" disabled name="email">
+        </div>
+
+        <div class="col-12">
+          <label for="address" class="form-label">Address</label>
+          <input type="text" class="form-control" id="address" value="{{lecturer.address}}" disabled name="address">
+        </div>
+
+        <div class="col-md-4">
+          <label for="gender" class="form-label">Gender</label>
+          <input type="text" class="form-control" id="gender" value="{{lecturer.gender}}" disabled name="gender">
+        </div>
+
+
+
+        <div class="col-md-4">
+          <label for="yearOfAppointment" class="form-label">Year of Appointment</label>
+          <input type="text" class="form-control" id="yearOfAppointment" placeholder="{{lecturer.yearOfAppointment}}" value="" disabled name="yearOfAppointment">
+        </div>
+
+
+          <div class="col-md-4">
+            <label for="rank" class="form-label">Rank</label>
+          <input type="text" class="form-control" id="rank" value="{{lecturer.rank}}" disabled name="rank">
+          </div>
+
+          <div class="col-md-6">
+            <label for="faculty" class="form-label">Faculty</label>
+          <input type="text" class="form-control" id="faculty" value="{{lecturer.faculty}}" disabled name="faculty">
+          </div>
+
+          <div class="col-md-6">
+            <label for="department" class="form-label">Department</label>
+          <input type="text" class="form-control" id="department" value="{{lecturer.department}}" disabled name="department">
+          </div>
+
+      <hr class="my-4">
+
+      <div class="col-12 d-flex justify-content-between">
+        <a name="cancel" id="" class="btn btn-success btn-lg col-6 w-25" href="../create-lecturer/cancel" role="button">Ok</a>
+      </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,182 @@
+{% extends 'dashboard/base.html' %}
+
+
+{% block content %}
+<div class="col-md-7 col-lg-10 mt-5 ms-4">
+    <h4 class="mb-3">Add Student</h4>
+    <form class="needs-validation" novalidate="" action="add-student/add" method="post">
+        {% csrf_token %}
+      <div class="row g-3">
+        <div class="col-sm-6">
+          <label for="firstName" class="form-label">First name</label>
+          <input type="text" class="form-control" id="firstName" placeholder="" value="" required="required" name="firstName">
+          <div class="invalid-feedback">
+            Valid first name is required.
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <label for="lastName" class="form-label">Last name</label>
+          <input type="text" class="form-control" id="lastName" placeholder="" value="" required="required" name="lastName">
+          <div class="invalid-feedback">
+            Valid last name is required.
+          </div>
+        </div>
+
+        <div class="col-md-3">
+            <label for="title" class="form-label">Title</label>
+            <select class="form-select" id="title" required="required" name="title">
+              <option value="">Choose...</option>
+              <option value="Mr.">Mr.</option>
+              <option value="Mrs.">Mrs.</option>
+              <option value="Miss">Miss</option>
+              <option value="Dr.">Dr.</option>
+              <option value="Engr.">Engr.</option>
+              <option value="Barr.">Barr.</option>
+              <option value="Prof.">Prof.</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid title.
+            </div>
+          </div>
+
+        <div class="col-sm-3">
+            <label for="regNumber" class="form-label">Registration Number</label>
+            <input type="text" class="form-control" id="regNumber" maxlength="15" placeholder="SHARASHELL/****" value="" required="required" name="regNumber">
+            <div class="invalid-feedback">
+              Valid Registration is required.
+            </div>
+          </div>
+
+          <div class="col-sm-3  ">
+            <label for="phone" class="form-label">Telephone</label>
+            <input type="tel" class="form-control" id="phone" placeholder="" value="" required="required" name="phone">
+            <div class="invalid-feedback">
+              Valid Registration is required.
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <label for="dateOfBirth" class="form-label">Date of Birth</label>
+            <input class="form-control" id="" type="date" placeholder="" aria-label="" name="dateOfBirth">
+            <div class="invalid-feedback">
+              Please provide a valid input.
+            </div>
+          </div>
+
+
+        <div class="col-12">
+          <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
+          <input type="email" class="form-control" id="email" placeholder="you@example.com" name="email">
+        </div>
+
+        <div class="col-12">
+          <label for="address" class="form-label">Address</label>
+          <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="required" name="address">
+          <div class="invalid-feedback">
+            Please enter your resident address.
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <label for="gender" class="form-label">Gender</label>
+          <select class="form-select" id="gender" required="required" name="gender">
+            <option value="">Choose...</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+          <div class="invalid-feedback">
+            Please select a valid gender.
+          </div>
+        </div>
+
+
+
+        <div class="col-md-3">
+          <label for="yearOfEntry" class="form-label">Year of Entry</label>
+            <input class="form-control" id="" type="date" placeholder="" aria-label="" name="yearOfEntry">
+          <div class="invalid-feedback">
+            Please provide a valid input.
+          </div>
+        </div>
+
+
+        <div class="col-md-3">
+            <label for="yearOfGraduation" class="form-label">Year of Graduation</label>
+            <input class="form-control" id="" type="date" placeholder="" aria-label="" name="yearOfGraduation">
+            <div class="invalid-feedback">
+              Please provide a valid input.
+            </div>
+          </div>
+
+
+          <div class="col-md-3">
+            <label for="level" class="form-label">Level</label>
+            <select class="form-select" id="level" required="required" name="level">
+              <option value="">Choose...</option>
+              {% for l in level %}
+              <option value="{{ l }}">{{ l }}</option>
+              {% endfor %}
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid level.
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="faculty" class="form-label">Faculty</label>
+            <select class="form-select" id="faculty" required="required" name="faculty">
+              <option value="">Choose...</option>
+              {% for f in faculty %}
+              <option value="{{ f }}">{{ f }}</option>
+              {% endfor %}
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid faculty.
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="department" class="form-label">Department</label>
+            <select class="form-select" id="department" required="required" name="department">
+              <option value="">Choose...</option>
+              {% for d in department %}
+              <option value="{{ d }}">{{ d }}</option>
+              {% endfor %}
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid department.
+            </div>
+          </div>
+
+          <div class="col-12 mt-3 justify-content-end d-flex">
+            <a name="cancel" id="" class="btn btn-danger col-2 me-5" href="add-student/cancel" role="button">Cancel</a>
+            <button class=" col-3 btn btn-primary" type="submit">Create Student</button>
+          </div>
+        </form>
+        
+        <hr class="my-4">
+
+    <form method="post"  enctype="multipart/form-data" action="add-student/batch-add">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="" class="form-label h4 mb-4">Batch Add Students</label>
+        <input type="file" class="form-control" name="csv_files" id="csv_file" placeholder="" aria-describedby="fileHelpId">
+        <div id="fileHelpId" class="form-text">Upload CSV file</div>
+        <button class="btn btn-primary col-2 float-end mt-2" type="submit">Add Students</button>
+      </div>
+    </form>
+
+    <div class="col-4 ms-1 mb-5">
+      <p class="h4">Download CSV Template</p>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512">
+        <path d="M480 352h-133.5l-45.25 45.25C289.2 409.3 273.1 416 256 416s-33.16-6.656-45.25-18.75L165.5 352H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96C512 366.3 497.7 352 480 352zM432 456c-13.2 0-24-10.8-24-24c0-13.2 10.8-24 24-24s24 10.8 24 24C456 445.2 445.2 456 432 456zM233.4 374.6C239.6 380.9 247.8 384 256 384s16.38-3.125 22.62-9.375l128-128c12.49-12.5 12.49-32.75 0-45.25c-12.5-12.5-32.76-12.5-45.25 0L288 274.8V32c0-17.67-14.33-32-32-32C238.3 0 224 14.33 224 32v242.8L150.6 201.4c-12.49-12.5-32.75-12.5-45.25 0c-12.49 12.5-12.49 32.75 0 45.25L233.4 374.6z"/>
+      </svg>
+      <a name="add-student/student-list-template" id="add-student/student-list-template" class="btn btn-primary btn-sm" href="add-student/student-list-template" role="button">Download Template</a>
+    </div>
+  </div>
+
+  </div>
+
+
+{% endblock %}

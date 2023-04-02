@@ -1,0 +1,25 @@
+{% extends 'dashboard/base.html' %}
+
+
+{% block content %}
+
+<div class="h3 col-10 mt-4">Edit Faculty</div>
+
+<div class="mb-3 mt-5">
+    <form action="{{faculty.facultyId}}/edit" method="post" class="row">
+        {% csrf_token %}
+        <div class="col-4">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="floatingInput" name="newFaculty" value="{{faculty.facultyName}}">
+                <label for="floatingInput">Faculty Name</label>
+            </div>
+        </div>
+        <div class="col-12">
+            <a name="" id="" class="btn btn-danger mt-2 ms-1 ps-4 pe-4" href="../add-faculty/cancel" role="button">Cancel</a>
+            <input name="" id="" class="btn btn-success mt-2 ms-1 ps-4 pe-4" type="submit" value="Edit">
+        </div>
+    </form>
+    
+</div>
+
+{% endblock content %}

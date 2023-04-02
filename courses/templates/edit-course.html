@@ -1,0 +1,85 @@
+{% extends 'dashboard/base.html' %}
+
+
+{% block content %}
+<div class="col-md-7 col-lg-10 mt-5 ms-4">
+    <h4 class="mb-3">Edit Course</h4>
+    <form class="needs-validation" novalidate="" action="{{course.id}}/edit" method="post">
+        {% csrf_token %}
+      <div class="row g-3">
+        <div class="col-sm-2">
+          <label for="courseCode" class="form-label">Course Code</label>
+          <input type="text" class="form-control" id="courseCode" maxlength="7" placeholder="SHA 001" value="{{course.courseCode}}" required="required" name="courseCode">
+          <div class="invalid-feedback">
+            Valid Course Code is required.
+          </div>
+        </div>
+
+        <div class="col-sm-8">
+          <label for="courseTitle" class="form-label">Course Title</label>
+          <input type="text" class="form-control" id="courseTitle" placeholder="Doe" value="{{course.courseTitle}}" required="required" name="courseTitle">
+          <div class="invalid-feedback">
+            Valid Course Title is required.
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <label for="creditLoad" class="form-label">Credit Load</label>
+          <input type="text" class="form-control" id="creditLoad" placeholder="2" value="{{course.creditLoad}}" required="required" name="creditLoad">
+          <div class="invalid-feedback">
+            Valid Credit Load is required.
+          </div>
+        </div>
+
+
+          <div class="col-md-2">
+            <label for="level" class="form-label">Level</label>
+            <select class="form-select" id="level" required="required" name="level">
+              <option value="">Choose...</option>
+              {% for l in levels %}
+              <option value="{{ l }}">{{ l }}</option>
+              {% endfor %}
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid level.
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <label for="faculty" class="form-label">Faculty</label>
+            <select class="form-select" id="faculty" required="required" name="faculty">
+              <option value="">Choose...</option>
+              {% for f in faculties %}
+              <option value="{{ f }}">{{ f }}</option>
+              {% endfor %}
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid faculty.
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="department" class="form-label">Department</label>
+            <select class="form-select" id="department" required="required" name="department">
+              <option value="">Choose...</option>
+              {% for d in departments %}
+              <option value="{{ d }}">{{ d }}</option>
+              {% endfor %}
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid department.
+            </div>
+          </div>
+
+      <hr class="my-4">
+
+      <div class="col-12 d-flex justify-content-between">
+        <button class="btn btn-primary btn-lg col-8" type="submit">Edit Course</button>
+        <a name="cancel" id="" class="btn btn-danger btn-lg col-6 w-25" href="../create-course/cancel" role="button">Cancel</a>
+      </div>
+    </form>
+
+  </div>
+
+
+{% endblock %}

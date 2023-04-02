@@ -1,0 +1,49 @@
+{% extends 'dashboard/base.html' %}
+
+
+{% block content %}
+<div class="col-md-7 col-lg-10 mt-5 ms-4">
+    <h4 class="mb-3">Add Subject</h4>
+    <form class="needs-validation" novalidate="" action="create-subject/create" method="post">
+        {% csrf_token %}
+      <div class="row g-3">
+
+
+          <div class="col-md-6">
+            <label for="course" class="form-label">Course</label>
+            <select class="form-select" id="course" required="required" name="course">
+              <option value="">Choose...</option>
+              {% for c in courses %}
+              <option value="{{ c }}">{{ c }}</option>
+              {% endfor %}
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid Course.
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="lecturer" class="form-label">Lecturer</label>
+            <select class="form-select" id="lecturer" required="required" name="lecturer" multiple>
+              <option value="">Choose...</option>
+              {% for l in lecturers %}
+              <option value="{{ l.id }}">{{ l }}</option>
+              {% endfor %}
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid Lecturer.
+            </div>
+          </div>
+
+      <hr class="my-4">
+
+      <div class="col-12 d-flex justify-content-between">
+        <button class="btn btn-primary btn-lg col-8" type="submit">Create Subject</button>
+        <a name="cancel" id="" class="btn btn-danger btn-lg col-6 w-25" href="create-subject/cancel" role="button">Cancel</a>
+      </div>
+    </form>
+
+  </div>
+
+
+{% endblock %}

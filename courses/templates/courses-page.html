@@ -1,0 +1,94 @@
+{% extends 'dashboard/base.html' %}
+
+
+{% block content %}
+
+<div class="row mt-4">
+    <div class="h2 col-10">Courses List</div>
+    <div class="col-2">
+        <a name="create-course" id="create-course" class="btn btn-secondary" href="create-course" role="button">
+            ADD COURSE 
+            <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" fill="white" viewBox="0 0 448 512"><path d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z"/></svg>
+        </a>
+    </div>
+</div>
+
+<div class="table-container m-4">
+    <table class="table sm table-hover">
+    <thead>
+        <tr class="h6">
+            <th>Id</th>
+            <th>Course Code</th>
+            <th>Course Title</th>
+            <th>Department</th>
+            <th>Credit Load</th>
+            <th>Level</th>
+            <th>Actions</th>
+        <tr>
+    </thead>
+    <tbody>
+        {% for c in courses %}
+        <tr>
+            <td>
+                <a href="details/{{c.id}}" class="text-decoration-none text-dark" id="{{ c.id }}">
+                    {{c.id}}
+                </a>
+            </td>
+            <td>
+                <a href="details/{{c.id}}" class="text-decoration-none text-dark" id="{{ c.id }}">
+                    {{c.courseCode}}
+                </a>
+            </td>
+            <td>
+                <a href="details/{{c.id}}" class="text-decoration-none text-dark" id="{{ c.id }}">
+                    {{c.courseTitle}}
+                </a>
+            </td>
+            <td>
+                <a href="details/{{c.id}}" class="text-decoration-none text-dark" id="{{ c.id }}">
+                 {{c.department}}
+                </a>
+            </td>
+            <td>
+                <a href="details/{{c.id}}" class="text-decoration-none text-dark" id="{{ c.id }}">
+                    {{c.creditLoad}} CL
+                </a>
+            </td>
+            <td>
+                <a href="details/{{c.id}}" class="text-decoration-none text-dark" id="{{ c.id }}">
+                    {{c.level}}
+                </a>
+            </td>
+            <td>
+                <a href="edit-course/{{c.id}}" class="text-decoration-none text-dark" id="{{ c.id }}">
+                    <button type="button" class="btn btn-sm btn-outline-primary">Edit</button>
+                </a>
+                <a href="delete-course/{{c.id}}" class="text-decoration-none text-dark" id="{{ c.id }}">
+                    <button type="button" class="btn btn-sm btn-outline-danger">Delete</button>
+                </a>
+                
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+    <div class="pagination  text-center float-end">
+        <span class="step-links">
+        {% if courses.has_previous %}
+        <a class="text-decoration-none ms-1 me-1" href="?page=1">&laquo; First</a>
+        <a class="text-decoration-none ms-1 me-1" href="?page={{ courses.previous_page_number }}">Previous</a>
+        {% endif %}
+        <span class="current ms-2 me-2">
+        Page {{ courses.number }} of {{ courses.paginator.num_pages }}
+        </span>
+        {% if courses.has_next %}
+        <a class="text-decoration-none ms-1 me-1" href="?page={{ courses.next_page_number }}">Next</a>
+        <a class="text-decoration-none ms-1 me-1" href="?page={{ courses.paginator.num_pages }}">Last &raquo;</a>
+        {% endif %}
+      </span>
+    </div>
+</div>
+
+
+
+{% endblock content %}

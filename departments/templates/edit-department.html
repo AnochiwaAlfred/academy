@@ -1,0 +1,57 @@
+{% extends 'dashboard/base.html' %}
+
+
+{% block content %}
+
+<div class="h3 col-10 mt-4">Edit Department</div>
+
+<div class="mb-3 mt-5">
+    <form action="{{department.departmentId}}/edit" method="post" class="row">
+        {% csrf_token %}
+        <div class="col-4">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="floatingInput" name="newDepartment" value="{{department.departmentName}}">
+                <label for="floatingInput">Department Name</label>
+                <div class="invalid-feedback">
+                    Valid Department name is required.
+                </div>
+            </div>
+        </div>
+
+        <div class="col-8"></div>
+
+        <div class="col-4 mt-4">
+            <label for="faculty" class="form-label">Faculty</label>
+            <select class="form-select" id="faculty" required="required" name="faculty">
+              <option value="">Choose...</option>
+              {% for f in faculty %}
+              <option>{{ f }}</option>
+              {% endfor %}
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid faculty.
+            </div>
+          </div>
+
+          <div class="col-4 mt-4">
+            <label for="courseDuration" class="form-label">Course Duration</label>
+            <select class="form-select" id="courseDuration" required="required" name="courseDuration">
+              <option value="">Choose...</option>
+              <option>4 Years</option>
+              <option>5 Years</option>
+              <option>6 Years</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid Course Duration.
+            </div>
+          </div>
+
+        <div class="col-12">
+            <a name="" id="" class="btn btn-danger mt-2 ms-1 ps-4 pe-4" href="../add-department/cancel" role="button">Cancel</a>
+            <input name="" id="" class="btn btn-success mt-2 ms-1 ps-4 pe-4" type="submit" value="Edit">
+        </div>
+    </form>
+    
+</div>
+
+{% endblock content %}

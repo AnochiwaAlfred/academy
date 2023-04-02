@@ -1,0 +1,23 @@
+courseCode,courseTitle,department,faculty,level,creditLoad
+CSC 201,COMPUTER PROGRAMMING I,Computer Science,Physical Sciences,200L,2
+CVE 201,STRENGHT OF MATERIAL I,Civil Engineering,Engineering and Technology,200L,2
+EEE 215,BASIC ELECTRICAL ENGINEERING I,Electrical/Electronics Engineering,Engineering and Technology,200L,2
+ENT 203,INTRODUCTION TO ENTREPRENEURIAL SKILLS,Fine and Applied Arts,Enviromental Sciences,200L,2
+FET 201,ENGINEERING MATHEMATICS I,Electrical/Electronics Engineering,Engineering and Technology,200L,3
+FET 203,ENGINEERING IN SOCIETY I,Electrical/Electronics Engineering,Engineering and Technology,200L,1
+GST 201,COMMUNICATION IN FRENCH,Foreign Languages and Literature,Humanities,200L,2
+LEP 201,LANGUAGE ENHANCEMENT PROGRAMME,English and Literary Studies,Humanities,200L,0
+MME 205,MATERIAL SCIENCE,Mechanical Engineering,Engineering and Technology,200L,2
+MME 207,ENGINEERING THERMODYNAMICS I,Mechanical Engineering,Engineering and Technology,200L,2
+MME 209,ENGINEERING DRAWING I,Mechanical Engineering,Engineering and Technology,200L,1
+MME 213,GENERAL ENGINEERING LABORATORY I,Mechanical Engineering,Engineering and Technology,200L,2
+MME 217,WORKSHOP PRACTICE I,Mechanical Engineering,Engineering and Technology,200L,1
+CHE 228,ENGINEERING CHEMISTRY,Chemical Engineering,Engineering and Technology,200L,2
+CVE 202,FLUID MECHANICS I,Civil Engineering,Engineering and Technology,200L,2
+EEE 224,BASIC ELECTRICAL ENGINEERING II,Electrical/Electronics Engineering,Engineering and Technology,200L,2
+FET 222,ENGINEERING MATHEMATICS II,Electrical/Electronics Engineering,Engineering and Technology,200L,3
+LEP 202,ADVANCES IN SPEED READING AND WRITING SKILLS,English and Literary Studies,Humanities,200L,0
+MME 222,ENGINEERING THERMODYNAMICS II,Mechanical Engineering,Engineering and Technology,200L,2
+MME 224,ENGINEERING DRAWING II,Mechanical Engineering,Engineering and Technology,200L,2
+MME 226,WORKSHOP PRACTICE II,Mechanical Engineering,Engineering and Technology,200L,2
+MME 228,GENERAL ENGINEERING LABORATORY II,Mechanical Engineering,Engineering and Technology,200L,3
