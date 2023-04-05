@@ -42,7 +42,7 @@ class Lecturer(models.Model):
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
     faculty = models.ForeignKey(Faculty, on_delete=models.CASCADE)
     yearOfAppointment = models.DateField(blank=False)
-    username = models.EmailField(max_length=100, unique=True)
+    username = models.CharField(max_length=100, unique=True)
 
     def __str__(self):
         return f'{self.title} {self.lastName} {self.firstName}'
