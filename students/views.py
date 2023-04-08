@@ -24,9 +24,9 @@ def studentsPage(request):
 
 @login_required
 def addStudent(request):
-    level = Level.objects.all
-    faculty = Faculty.objects.all
-    department = Department.objects.all
+    level = Level.objects.all()
+    faculty = Faculty.objects.all()
+    department = Department.objects.all()
     context = {
         'level':level,
         'faculty':faculty,
